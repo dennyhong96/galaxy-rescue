@@ -1,3 +1,11 @@
+#
+This is the JS file for my little game "galaxy rescue". When game starts, images of jets andhelicopters are being appended to random slots in game area constantly until all the alots are filled. If in the end all slots are filled with only helicopters then the player wins. Player clicks on jet images to remove them from the DOM. If players clicks on a helicopter,they lose instantly.
+
+
+
+
+
+
 \*\*# Creative Project 2 Project Specification
 
 ## Overview
