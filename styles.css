@@ -1,10 +1,50 @@
+/*
+  Haiyang Hong
+  4/19/2020
+  Section AE TA: Alex Larsen
+
+  This css file is used to style my little game "galaxy rescue".
+*/
+
+/* general section */
+body,
+button {
+  /* citing: cursor incon made by Freepik from www.flaticon.com from wallpapercave.com */
+  cursor: url("./images/target.png") 16 16, auto;
+}
+
+#play-ground,
+body #intro {
+  margin: 0 auto;
+}
+
+#play-ground,
+#play-ground > div,
+body #intro {
+  display: flex;
+}
+
+#play-ground > div,
+body #intro {
+  flex-direction: column;
+}
+
+#menu-panel,
+a,
+a:visited,
+footer p,
+label {
+  color: #fff;
+}
+
+/* body section */
 body {
-  background-image: url("https://wallpapercave.com/wp/wp3284839.gif");
+  /* citing: background gif from wallpapercave.com */
+  background-image: url("./images/background.gif");
   background-size: cover;
   font-family: "Holtwood One SC", serif;
   text-align: center;
   user-select: none;
-  cursor: url("./images/target.png") 16 16, auto;
 }
 
 body h1 {
@@ -14,15 +54,13 @@ body h1 {
   margin: 1.5rem auto;
 }
 
+/* intro section */
 body #intro {
   width: 50%;
-  margin: 0 auto;
-  background-color: aliceblue;
+  background-color: #f0f8ff;
   opacity: 75%;
-  color: black;
+  color: #000;
   border-radius: 25px;
-  display: flex;
-  flex-direction: column;
 }
 
 #intro > h2 {
@@ -37,19 +75,18 @@ p > span {
   color: red;
 }
 
-body #intro.hidden {
+#intro.hidden {
   display: none;
 }
 
+/* menu panel section */
 #menu-panel {
-  color: white;
   cursor: default;
 }
 
 button {
   display: block;
-  margin: 2rem auto 0 auto;
-  /* width: 20%; */
+  margin: 2rem auto 0;
   padding: 0 1rem;
   height: 4rem;
   font-family: inherit;
@@ -57,54 +94,9 @@ button {
   border-radius: 5%;
   color: #43d8c9;
   text-shadow: 2px 2px #95389e;
-  cursor: url("./images/target.png") 16 16, auto;
 }
 
-label {
-  color: white;
-}
-
-#play-ground {
-  padding-top: 1.5rem;
-  width: 75%;
-  height: 75vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: center;
-}
-
-#play-ground > div {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-}
-
-#play-ground > div > div {
-  height: 25%;
-}
-
-img {
-  width: 5.5rem;
-
-  /**/
-  transition: transform 0.5s ease;
-  animation: fadeIn linear 0.3s;
-  animation-iteration-count: 1;
-}
-
-img:hover {
-  transform: scale(1.3);
-}
-
-.result-img {
-  width: 20rem;
-  transition: transform 0.5s ease;
-  animation: animateElement linear 0.5s;
-  animation-iteration-count: 1;
-}
-
+/* footer section */
 footer {
   position: fixed;
   bottom: 0;
@@ -114,41 +106,74 @@ footer {
 
 footer p {
   font-size: 0.75rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  font-family: "Arial", "Helvetica", sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 1200px) {
+  /* footer takes up actual space on screens smaller than 1200px instead of fixed position */
   footer {
     position: static;
   }
 }
 
+/* play area section */
+#play-ground {
+  padding-top: 1.5rem;
+  width: 75%;
+  height: 75vh;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+}
+
+#play-ground > div {
+  width: 25%;
+}
+
+#play-ground > div > div {
+  height: 25%;
+}
+
+/* jets and helicopter image section */
+img {
+  width: 5.5rem;
+  transition: transform 0.5s ease;
+  animation: fadeIn linear 0.3s;
+  animation-iteration-count: 1;
+}
+
+img:hover {
+  transform: scale(1.3);
+}
+
 @keyframes fadeIn {
+  /* animation for displaying jets and helicopters image */
   0% {
     opacity: 0;
   }
-  100% {
+
+  to {
     opacity: 1;
   }
 }
 
-@keyframes animateElement {
+/* result image section */
+.result-img {
+  width: 20rem;
+  animation: slideIn linear 0.5s;
+}
+
+@keyframes slideIn {
+  /* animation for displaying winning and losing result images */
   0% {
-    opacity: 0;
     transform: scaleY(0) translateY(-100%);
   }
-  100% {
-    opacity: 1;
-    transform: scaleY(1) translateY(0%);
+
+  to {
+    transform: scaleY(1) translateY(0);
   }
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:visited {
-  color: white;
 }
