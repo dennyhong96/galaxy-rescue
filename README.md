@@ -2,7 +2,7 @@
 
 ## A creative project of mine during UW Web Programming course
 
-### When the game starts, images of jets andhelicopters are being appended to random slots in game area constantly until all the alots are filled. If in the end all slots are filled with only helicopters then the player wins. Player clicks on jet images to remove them from the DOM. If players clicks on a helicopter,they lose instantly. This game has 3 difficulty levels to choose from, as difficulty goes harder the game area will have more slots and it requires faster reflections.
+### When the game starts, images of jets andhelicopters are being appended to random slots in game area constantly until all the alots are filled. If in the end all slots are filled with only helicopters then the player wins. Player clicks on jet images to remove them from the DOM. If players clicks on a helicopter,they lose instantly. This game has 3 difficulty levels to choose from, as difficulty goes harder the game area will have more slots and it requires faster reflection.
 
 ### Try out for yourself: https://hyhong-code.github.io/galaxy-rescue/
 
